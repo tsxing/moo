@@ -1,12 +1,68 @@
-body{
-    background-color: #404040;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+
+  body{
+    background-color: rgb(234, 234, 234);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    height: 100vh;
+    min-height: 100vh;
+  }
+
+
+.content{
+    position: relative;
+}
+
+.content h2{
+    position: absolute;
+    color: black;
+    transform: translate(-50%,-100%);
+    font-size: 8em;
+}
+
+.content h2:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 2px transparent;
 
 }
+.content h2:nth-child(2){
+    color: black;
+    animation: milk-flow 2s ease-in-out infinite;
+
+}
+
+@keyframes milk-flow{
+    0%{
+        clip-path: polygon(34% 34%, 59% 42%, 80% 34%, 100% 39%, 100% 100%, 0 100%, 0 32%, 16% 38%);
+
+
+    }
+    50%{
+        clip-path: polygon(34% 29%, 59% 25%, 80% 29%, 100% 26%, 100% 100%, 0 100%, 0 23%, 17% 20%);
+
+
+    }
+    100%{
+        clip-path: polygon(34% 34%, 59% 42%, 80% 34%, 100% 39%, 100% 100%, 0 100%, 0 32%, 16% 38%);
+
+    }
+    
+}
+  .container {
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+  }
 
 
 
@@ -31,7 +87,7 @@ body{
 
 @keyframes oval-breathe{
     50%{
-        height: 11em;
+        height: 11.5em;
     }
 
 }
@@ -61,7 +117,20 @@ body{
 
 }
 
-/*
+.ear1{
+    width: 5em;
+    height: 8em;
+    border-radius: 35%;
+    clip-path: polygon(53% 21%, 67% 26%, 80% 37%, 87% 51%, 94% 66%, 96% 81%, 98% 100%, 4% 100%, 6% 92%, 9% 81%, 11% 73%, 12% 65%, 12% 56%, 14% 46%, 19% 36%, 27% 27%, 40% 20%);
+    background-color: white;
+    z-index: -1;
+    position: relative;
+    left: 0%;
+    top:30%;
+    transform: translate(12%,28%) rotateY(180deg);
+    rotate: -9deg;
+    animation: ear-flatten 2s infinite;
+} 
 .ear2{
     width: 5em;
     height: 8em;
@@ -70,11 +139,40 @@ body{
     background-color: black;
     z-index: -1;
     position: relative;
-    left: 430px;
-    top:120px;
+    left: 40%;
+    top:5%;
     transform: translate(12%,28%);
     rotate: 9deg;
-} */
+    animation: ear-flatten 2s infinite;
+} 
+
+.pink-ear1{
+    background-color: #f1c0aa;
+    clip-path: polygon(53% 21%, 67% 26%, 80% 37%, 87% 51%, 94% 66%, 96% 81%, 98% 100%, 4% 100%, 6% 92%, 9% 81%, 11% 73%, 12% 65%, 12% 56%, 14% 46%, 19% 36%, 27% 27%, 40% 20%);
+    width: 1.5em;
+    height: 4em;
+    position: relative;
+    left: 30%;
+    top:30%;
+
+}
+
+.pink-ear2{
+    background-color: #f1c0aa;
+    clip-path: polygon(53% 21%, 67% 26%, 80% 37%, 87% 51%, 94% 66%, 96% 81%, 98% 100%, 4% 100%, 6% 92%, 9% 81%, 11% 73%, 12% 65%, 12% 56%, 14% 46%, 19% 36%, 27% 27%, 40% 20%);
+    width: 1.5em;
+    height: 4em;
+    position: relative;
+    left: 30%;
+    top:30%;
+
+}
+
+@keyframes ear-flatten{
+    50%{
+        height: 7.5em;
+    }
+}
 
 .eye-left{
     width: 1.6em;
@@ -114,16 +212,21 @@ body{
 
 }
 
+.snout:hover{
+    transform: scale(0.9);
+    cursor: pointer;
+}
+
 @keyframes snout-breathe{
     25%{
-        top:31%;
+        top:31.5%;
     }
     50%{
-        top: 33%;
+        top: 32.5%;
 
     }
     75%{
-        top: 31%;
+        top: 31.5%;
 
     }
 }
@@ -149,4 +252,3 @@ body{
     top: 40%;
     right: 18%;
 }
-
