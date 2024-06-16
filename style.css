@@ -1,0 +1,152 @@
+body{
+    background-color: #404040;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+
+}
+
+
+
+.oval{
+    width: 18em;
+    height: 12em;
+    background-color: white;
+    border-radius: 45%;
+    box-shadow: 10px 10px 5px #171717;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    
+
+    z-index: 2;
+    overflow: hidden;
+    animation: oval-breathe 2s infinite;
+    
+}
+
+@keyframes oval-breathe{
+    50%{
+        height: 11em;
+    }
+
+}
+.right-black-part{
+    background-color: black;
+    z-index: 3;
+    height: 10em;
+    width: 18em;
+    border-radius: 40%;
+    rotate: 6deg;
+    position: absolute;
+    right: -45%;
+    top: -55%;  
+
+}
+
+.left-black-part{
+    background-color: black;
+    z-index: 3;
+    height: 6em;
+    width: 6em;
+    border-radius: 40%;
+    rotate: 6deg;
+    position: absolute;
+    left: -8%;
+    top: -25%;  
+
+}
+
+/*
+.ear2{
+    width: 5em;
+    height: 8em;
+    border-radius: 35%;
+    clip-path: polygon(53% 21%, 67% 26%, 80% 37%, 87% 51%, 94% 66%, 96% 81%, 98% 100%, 4% 100%, 6% 92%, 9% 81%, 11% 73%, 12% 65%, 12% 56%, 14% 46%, 19% 36%, 27% 27%, 40% 20%);
+    background-color: black;
+    z-index: -1;
+    position: relative;
+    left: 430px;
+    top:120px;
+    transform: translate(12%,28%);
+    rotate: 9deg;
+} */
+
+.eye-left{
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 100%;
+    z-index: 99;
+    background-color: black;
+    position: absolute;
+    top: 45%;
+    left: 16%;
+}
+
+.eye-right{
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 100%;
+    z-index: 99;
+    background-color: black;
+    position: absolute;
+    top: 45%;
+    right: 16%;
+}
+
+
+.snout{
+    width: 6em;
+    height: 4em;
+    background-color: #f3cab7;
+    border-radius: 37%;
+    border: 0.4em solid #f1c0aa;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+    top: 33%;
+    left: 32%;
+
+    animation: snout-breathe 2s infinite;
+
+}
+
+@keyframes snout-breathe{
+    25%{
+        top:31%;
+    }
+    50%{
+        top: 33%;
+
+    }
+    75%{
+        top: 31%;
+
+    }
+}
+
+.nostril1{
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 100%;
+    z-index: 99;
+    background-color: black;
+    position: absolute;
+    top: 40%;
+    left: 18%;
+}
+
+.nostril2{
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 100%;
+    z-index: 99;
+    background-color: black;
+    position: absolute;
+    top: 40%;
+    right: 18%;
+}
+
