@@ -4,15 +4,17 @@
     margin: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    
   }
 
 
   body{
-    background-color: rgb(234, 234, 234);
+    background-color: rgb(249, 249, 249);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    overflow-y: hidden;
   }
 
 
@@ -23,34 +25,44 @@
 .content h2{
     position: absolute;
     color: black;
-    transform: translate(-50%,-100%);
+    transform: translate(-50%,-150%);
     font-size: 8em;
+    
 }
 
+
 .content h2:nth-child(1){
-    color: transparent;
-    -webkit-text-stroke: 2px transparent;
+    color: white;
+    -webkit-text-stroke: 1px transparent;
+    
 
 }
 .content h2:nth-child(2){
     color: black;
-    animation: milk-flow 2s ease-in-out infinite;
+    animation: milk-flow 16s ease-in-out infinite;
+    
 
 }
 
 @keyframes milk-flow{
     0%{
-        clip-path: polygon(34% 34%, 59% 42%, 80% 34%, 100% 39%, 100% 100%, 0 100%, 0 32%, 16% 38%);
-
+        clip-path: polygon(40% 46%, 55% 46%, 71% 45%, 82% 44%, 100% 46%, 100% 100%, 0 100%, 0 41%, 11% 40%, 24% 44%);
+    }
+    25%{
+        clip-path: polygon(39% 69%, 55% 79%, 67% 74%, 82% 64%, 100% 61%, 100% 100%, 0 100%, 0 54%, 12% 58%, 28% 60%);
 
     }
     50%{
-        clip-path: polygon(34% 29%, 59% 25%, 80% 29%, 100% 26%, 100% 100%, 0 100%, 0 23%, 17% 20%);
+        clip-path: polygon(40% 32%, 56% 25%, 72% 31%, 84% 45%, 100% 60%, 100% 100%, 0 100%, 0 51%, 12% 55%, 28% 46%);
 
 
     }
+    75%{
+        clip-path: polygon(39% 69%, 55% 79%, 67% 74%, 82% 64%, 100% 61%, 100% 100%, 0 100%, 0 54%, 12% 58%, 28% 60%);
+
+    }
     100%{
-        clip-path: polygon(34% 34%, 59% 42%, 80% 34%, 100% 39%, 100% 100%, 0 100%, 0 32%, 16% 38%);
+        clip-path: polygon(40% 46%, 55% 46%, 71% 45%, 82% 44%, 100% 46%, 100% 100%, 0 100%, 0 41%, 11% 40%, 24% 44%);
 
     }
     
@@ -62,21 +74,25 @@
     transform: translate(-50%, -50%);
     left: 50%;
     top: 50%;
+    background-color: transparent;
   }
 
 
 
 .oval{
     width: 18em;
-    height: 12em;
-    background-color: white;
+    height: 13em;
+    background-color: #ffffff;
     border-radius: 45%;
-    box-shadow: 10px 10px 5px #171717;
+    border: 0px solid transparent;
+    box-shadow: inset -5px -20px 45px rgb(218, 218, 218);
     position: absolute;
     transition: all 0.2s ease-in-out;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    top: 10em;
+    left: 6.5em;
     
 
     z-index: 2;
@@ -87,168 +103,222 @@
 
 @keyframes oval-breathe{
     50%{
-        height: 11.5em;
+        height: 12.5em;
     }
 
 }
 .right-black-part{
-    background-color: black;
+    background-color: rgb(68, 82, 85);
+    box-shadow: inset 0 0 100px rgb(29, 29, 29);
     z-index: 3;
-    height: 10em;
+    height: 9em;
     width: 18em;
-    border-radius: 40%;
+    border-radius: 30%;
     rotate: 6deg;
     position: absolute;
-    right: -45%;
-    top: -55%;  
+    right: -55%;
+    top: -30%;  
+    rotate: 15deg;
 
 }
 
 .left-black-part{
-    background-color: black;
+    background-color: rgb(62, 62, 62);
+    box-shadow: inset 0 0 20px rgb(30, 30, 30);
     z-index: 3;
-    height: 6em;
-    width: 6em;
-    border-radius: 40%;
-    rotate: 6deg;
+    height: 4em;
+    width: 5em;
+    border-radius: 45%;
+    rotate: -10deg;
     position: absolute;
-    left: -8%;
-    top: -25%;  
+    left: -3%;
+    top: -5%;  
 
 }
 
-.ear1{
+.ear{
     width: 5em;
     height: 8em;
     border-radius: 35%;
     clip-path: polygon(53% 21%, 67% 26%, 80% 37%, 87% 51%, 94% 66%, 96% 81%, 98% 100%, 4% 100%, 6% 92%, 9% 81%, 11% 73%, 12% 65%, 12% 56%, 14% 46%, 19% 36%, 27% 27%, 40% 20%);
-    background-color: white;
     z-index: -1;
     position: relative;
-    left: 0%;
-    top:30%;
+    animation: ear-move 8s infinite;
+    
+} 
+
+.ear-left{
+    background-color: #f3f3f3;
+    left: 20%;
+    top:12%;
     transform: translate(12%,28%) rotateY(180deg);
     rotate: -9deg;
-    animation: ear-flatten 2s infinite;
-} 
-.ear2{
-    width: 5em;
-    height: 8em;
-    border-radius: 35%;
+    box-shadow: inset 0 0 28px rgb(185, 185, 185);
+    
+
+}
+.ear-right{
+    background-color: rgb(42, 42, 42);
+    left: 62%;
+    top:-13%;
+    transform: translate(12%,28%);
+    box-shadow: inset 0 0 35px black;
+    rotate: 9deg;
+}
+
+@keyframes ear-move{
+    25%{
+        height: 8em;
+    }
+    50%{
+        height: 7.8em;
+    }
+    75%{
+        height: 8em;
+    }
+}
+.pink-ear{
+    background-color: #efd2ba;
     clip-path: polygon(53% 21%, 67% 26%, 80% 37%, 87% 51%, 94% 66%, 96% 81%, 98% 100%, 4% 100%, 6% 92%, 9% 81%, 11% 73%, 12% 65%, 12% 56%, 14% 46%, 19% 36%, 27% 27%, 40% 20%);
-    background-color: black;
-    z-index: -1;
+    width: 1.2em;
+    height: 4em;
     position: relative;
     left: 40%;
-    top:5%;
-    transform: translate(12%,28%);
-    rotate: 9deg;
-    animation: ear-flatten 2s infinite;
-} 
-
-.pink-ear1{
-    background-color: #f1c0aa;
-    clip-path: polygon(53% 21%, 67% 26%, 80% 37%, 87% 51%, 94% 66%, 96% 81%, 98% 100%, 4% 100%, 6% 92%, 9% 81%, 11% 73%, 12% 65%, 12% 56%, 14% 46%, 19% 36%, 27% 27%, 40% 20%);
-    width: 1.5em;
-    height: 4em;
-    position: relative;
-    left: 30%;
     top:30%;
+    rotate: 15deg;
 
 }
 
-.pink-ear2{
-    background-color: #f1c0aa;
-    clip-path: polygon(53% 21%, 67% 26%, 80% 37%, 87% 51%, 94% 66%, 96% 81%, 98% 100%, 4% 100%, 6% 92%, 9% 81%, 11% 73%, 12% 65%, 12% 56%, 14% 46%, 19% 36%, 27% 27%, 40% 20%);
-    width: 1.5em;
-    height: 4em;
-    position: relative;
-    left: 30%;
-    top:30%;
+.horns{
+    height: 3em;
+    width: 5em;
+    background-color: #efd2ba;
+    border-radius:60% 40% 80% 40% ;
+    box-shadow: inset 0 0 30px #ffe8d5;
+    animation: horn-move 4s infinite;
+    
+}
+.horn-left{
+    transform: translate(8em,10.5em) rotateX(180deg) ;
+    rotate: 273deg;
+}
+
+.horn-right{
+    transform: translate(8em,17em);
+    rotate: -98deg;
 
 }
 
-@keyframes ear-flatten{
+@keyframes horn-move{
     50%{
-        height: 7.5em;
+        height: 2.8em;
     }
+}
+
+.eye{
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 100%;
+    z-index: 99;
+    background-color: black;
+    position: absolute;
+    top: 46%;
+    animation: eye-shut 3s infinite;
+
 }
 
 .eye-left{
-    width: 1.6em;
-    height: 1.6em;
-    border-radius: 100%;
-    z-index: 99;
-    background-color: black;
-    position: absolute;
-    top: 45%;
-    left: 16%;
+    left: 15%;
 }
 
 .eye-right{
-    width: 1.6em;
-    height: 1.6em;
-    border-radius: 100%;
-    z-index: 99;
-    background-color: black;
-    position: absolute;
-    top: 45%;
-    right: 16%;
+    right: 15%;
 }
 
+@keyframes eye-shut{
+    45%{
+        height: 1.6em;
 
-.snout{
-    width: 6em;
-    height: 4em;
-    background-color: #f3cab7;
+    }
+    50%{
+        height: 0em;
+
+    }
+    55%{
+        height: 1.6em; 
+       
+    }
+    58%{
+        height: 0em;
+
+    }
+    62%{
+        height: 1.6em;
+
+    }
+}
+
+.big-snout{
+    width: 7em;
+    height: 5em;
+    background-color: #c29a7b;
     border-radius: 37%;
-    border: 0.4em solid #f1c0aa;
     position: absolute;
     transition: all 0.2s ease-in-out;
     top: 33%;
-    left: 32%;
+    left: 30.0%; /*ffe7d4*/
+    box-shadow: inset 0 30px 65px #ffe7d4;
 
-    animation: snout-breathe 2s infinite;
+    animation: snout-breathe 4s infinite;
 
 }
 
-.snout:hover{
-    transform: scale(0.9);
-    cursor: pointer;
-}
+.snout{
+    width: 6.2em;
+    height: 4.2em;
+    background-color: #e9cab0;
+    border-radius: 37%;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+    top: 8.0%;
+    left:6.1%;
+    box-shadow: inset 0 60px 45px #fee8d6;
 
+    animation: snout-breathe 4s infinite;
+
+}
 @keyframes snout-breathe{
-    25%{
-        top:31.5%;
-    }
-    50%{
-        top: 32.5%;
+}
 
-    }
-    75%{
-        top: 31.5%;
-
-    }
+.nostril{
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 100%;
+    z-index: 99;
+    background-color: black;
+    position: absolute;
+    top: 40%;
+    animation: nostril-flare 2s infinite;
 }
 
 .nostril1{
-    width: 0.8em;
-    height: 0.8em;
-    border-radius: 100%;
-    z-index: 99;
-    background-color: black;
-    position: absolute;
-    top: 40%;
-    left: 18%;
+    left: 17%;
+}
+.nostril2{
+    right: 17%;
+
 }
 
-.nostril2{
-    width: 0.8em;
-    height: 0.8em;
-    border-radius: 100%;
-    z-index: 99;
-    background-color: black;
-    position: absolute;
-    top: 40%;
-    right: 18%;
+
+@keyframes nostril-flare{
+    25%{
+        transform: scale(1.0);
+
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    75%{
+        transform: scale(1.0);
+    }
 }
